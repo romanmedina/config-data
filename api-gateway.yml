@@ -4,3 +4,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+      
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: prj-customer-mngt-bank
+          uri: lb://prj-customer-mngt-bank
+          predicates:
+            - Path=/client/**
