@@ -13,6 +13,6 @@ spring:
           enabled: true
       routes:
         - id: prj-customer-mngt-bank
-          uri: lb://prj-customer-mngt-bank
+          uri: http://localhost:8082/
           predicates:
             - Path=/client/**
